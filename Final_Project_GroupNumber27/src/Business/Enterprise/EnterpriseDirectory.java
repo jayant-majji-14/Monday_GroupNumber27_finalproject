@@ -1,54 +1,59 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Business.Enterprise;
 
 import java.util.ArrayList;
 
 /**
- *
- * @author ayush
+ * Manages a list of enterprises in the system.
  */
 public class EnterpriseDirectory {
-            private ArrayList<Business.Enterprise.Enterprise> enterpriseList;
-          
-   
-            
-        public EnterpriseDirectory(){
-        enterpriseList=new ArrayList<Enterprise>();
+
+    private ArrayList<Enterprise> enterpriseList; // List of all enterprises
+
+    // Constructor
+    public EnterpriseDirectory() {
+        enterpriseList = new ArrayList<>();
     }
 
-    public ArrayList<Business.Enterprise.Enterprise> getEnterpriseList() {
+    // Getter for the enterprise list
+    public ArrayList<Enterprise> getEnterpriseList() {
         return enterpriseList;
     }
 
-    public void setEnterpriseList(ArrayList<Business.Enterprise.Enterprise> enterpriseList) {
+    // Setter for the enterprise list
+    public void setEnterpriseList(ArrayList<Enterprise> enterpriseList) {
         this.enterpriseList = enterpriseList;
     }
-    
-    
-    //Create enterprise
-    public Business.Enterprise.Enterprise createAndAddEnterprise(String name,Business.Enterprise.Enterprise.EnterpriseType type){
-        Business.Enterprise.Enterprise enterprise=null;
-        if(type==Business.Enterprise.Enterprise.EnterpriseType.HealthcareFacility){
-            enterprise=new HealthcareFacilityEnterprise(name);
+
+    /**
+     * Creates and adds a new enterprise to the directory based on its type.
+     *
+     * @param organizationId Unique ID for the enterprise.
+     * @param name           Name of the enterprise.
+     * @param type           Type of the enterprise.
+     * @return The created enterprise.
+     */
+    public Enterprise createAndAddEnterprise(String organizationId, String name, Enterprise.EnterpriseType type) {
+        Enterprise enterprise = null;
+
+        switch (type) {
+            case HealthcareFacility:
+                enterprise = new HealthcareFacilityEnterprise(organizationId, name);
+                break;
+            case CentralLaboratory:
+                enterprise = new CentralLabortoryEnterprise(organizationId, name);
+                break;
+            case ResearchDepartment:
+                enterprise = new ResearchDepartmentEnterprise(organizationId, name);
+                break;
+            case LifeStyleCoachingUnit:
+                enterprise = new LifestyleCoachingUnitEnterprise(organizationId, name);
+                break;
+        }
+
+        if (enterprise != null) {
             enterpriseList.add(enterprise);
         }
-    
-      if(type==Business.Enterprise.Enterprise.EnterpriseType.CentralLaboratory){
-            enterprise=new CentralLaboratoryEnterprise(name);
-            enterpriseList.add(enterprise);
-        }
-    
-      if(type==Business.Enterprise.Enterprise.EnterpriseType.ResearchDepartment){
-            enterprise=new ResearchDepartmentEnterprise(name);
-            enterpriseList.add(enterprise);
-        }
-      if(type==Business.Enterprise.Enterprise.EnterpriseType.LifeStyleCoachingUnit){
-            enterprise=new LifeStyleCoachingUnitEnterprise(name);
-            enterpriseList.add(enterprise);
-        }
+
         return enterprise;
     }
 }

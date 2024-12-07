@@ -1,22 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Business.Enterprise;
 
-import java.util.ArrayList;
-
 /**
- *
- * @author ayush
+ * Represents a Healthcare Facility Enterprise.
  */
 public class HealthcareFacilityEnterprise extends Enterprise {
 
-        public HealthcareFacilityEnterprise(String name){
-        super(name,Business.Enterprise.Enterprise.EnterpriseType.HealthcareFacility);
+    // Constructor
+    public HealthcareFacilityEnterprise(String organizationId, String name) {
+        super(organizationId, name, EnterpriseType.HealthcareFacility);
     }
+
+    // Implementing the abstract method for enterprise-specific functionality
     @Override
-    public ArrayList<Role> getSupportedRole() {
-        return null;
+    public void performEnterpriseFunction() {
+        System.out.println("Healthcare Facility Enterprise " + getOrganizationName() + " is managing healthcare services.");
     }
+
+    // Implementing the abstract method from Organization
+    @Override
+    public void performOrganizationFunction() {
+        System.out.println("Performing organization-level operations for Healthcare Facility Enterprise.");
+    }
+
+    // Additional functionality specific to HealthcareFacilityEnterprise can be added here
 }
