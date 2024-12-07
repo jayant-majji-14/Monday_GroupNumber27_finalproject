@@ -1,21 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Business.Organization;
 
 import Business.Role.Role;
 import java.util.ArrayList;
 
 /**
- *
- * @author jayantmajji
+ * Base class for all organizations in the system.
  */
 public abstract class Organization {
-    private String organizationId; // Unique identifier for the organization
-    private String organizationName; // Name of the organization
-    private String organizationType; // Type of organization (e.g., Doctor, Patient)
-    private ArrayList<Role> roles; // List of roles associated with the organization
+    private String organizationId;
+    private String organizationName;
+    private String organizationType;
+    private ArrayList<Role> roles; // Roles available in this organization
+
+    // Enum to define organization types
+    public enum Type {
+        Doctor("Doctor Organization"),
+        Patient("Patient Organization"),
+        Screening("Screening Department"),
+        Exercise("Exercise Program Team"),
+        Pharmacy("Pharmacy Network Organization"),
+        NGO("NGO");
+
+        private String value;
+
+        private Type(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+    }
 
     // Constructor
     public Organization(String organizationId, String organizationName, String organizationType) {
@@ -64,10 +79,10 @@ public abstract class Organization {
         this.roles.remove(role);
     }
 
-    // Abstract method for specific organization functionality
+    // Abstract method for organization-specific functionality
     public abstract void performOrganizationFunction();
 
-    // To String for better representation
+    // ToString for better representation
     @Override
     public String toString() {
         return "Organization{" +

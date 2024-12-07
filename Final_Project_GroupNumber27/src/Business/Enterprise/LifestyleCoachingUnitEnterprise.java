@@ -1,23 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Business.Enterprise;
 
-import java.util.ArrayList;
-
 /**
- *
- * @author ayush
+ * Represents a Lifestyle Coaching Unit Enterprise.
  */
 public class LifestyleCoachingUnitEnterprise extends Enterprise {
 
-     public LifestyleCoachingUnitEnterprise(String name){
-     super(name,Business.Enterprise.Enterprise.EnterpriseType.LifeStyleCoachingUnit);
+    // Constructor
+    public LifestyleCoachingUnitEnterprise(String organizationId, String name) {
+        super(organizationId, name, EnterpriseType.LifeStyleCoachingUnit);
     }
+
+    // Implementing the abstract method for enterprise-specific functionality
     @Override
-    public ArrayList<Role> getSupportedRole() {
-        return null;
+    public void performEnterpriseFunction() {
+        System.out.println("Lifestyle Coaching Unit Enterprise " + getOrganizationName() + " is managing lifestyle improvement programs.");
     }
-    
+
+    // Implementing the abstract method from Organization
+    @Override
+    public void performOrganizationFunction() {
+        System.out.println("Performing organization-level operations for Lifestyle Coaching Unit Enterprise.");
+    }
+
+    // Additional functionality specific to LifestyleCoachingUnitEnterprise can be added here
 }
