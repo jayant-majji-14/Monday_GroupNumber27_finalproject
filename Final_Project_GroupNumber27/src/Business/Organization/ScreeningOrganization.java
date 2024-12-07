@@ -4,23 +4,25 @@
  */
 package Business.Organization;
 
-import Business.Role.DoctorRole;
+import Business.Role.LabAssistantRole;
+import Business.Role.ResearchScientistRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 /**
  *
  * @author deves
  */
-public class DoctorOrganization extends Organization{
+public class ScreeningOrganization extends Organization {
     
-    public DoctorOrganization(String name) {
+    public ScreeningOrganization(String name) {
         super(name);
     }
 
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList<>();
-        roles.add(new DoctorRole());
+        roles.add(new LabAssistantRole());
+        roles.add(new ResearchScientistRole());
         return roles;
     }
     

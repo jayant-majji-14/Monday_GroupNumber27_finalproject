@@ -6,25 +6,45 @@ package Business.Role;
 
 /**
  *
- * @author jayantmajji
+ * @author deves
  */
 public abstract class Role {
     
-    private String roleName;
+    public enum RoleType {
+        Patient("Patient"),
+        LabAssistant("Lab Assistant"),
+        ResearchScientist("Research Scientist"),
+        Doctor("Doctor"),
+        Nutritionist("Nutritionist"),
+        Pharmacist("Pharmacist"),
+        ProgramAdministrator("Program Administrator"),
+        FitnessCoach("Fitness Coach");
 
-    public Role(String roleName) {
-        this.roleName = roleName;
+        private String value;
+
+        private RoleType(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return value;
+        }
     }
 
-    public String getRoleName() {
-        return roleName;
-    }
+    /**
+     * Abstract method for the role-specific operations. This could be used to 
+     * define any common functionality across roles.
+     */
+    public abstract void performRoleOperations();
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
+    @Override
+    public String toString() {
+        return this.getClass().getName();
     }
-
-    // Abstract method to define specific role workflows
-    public abstract void performRole();
     
 }
