@@ -5,6 +5,8 @@
 package Business.Enterprise;
 
 import Business.Enterprise.Enterprise.EnterpriseType;
+import Business.Role.Role;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,6 +16,11 @@ public class NGOEnterprise extends Enterprise {
     
     public NGOEnterprise(String name) {
         super(name, EnterpriseType.NGO);
+    }
+    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        return null;
     }
     
 }

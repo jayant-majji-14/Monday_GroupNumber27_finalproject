@@ -12,18 +12,11 @@ import Business.Organization.OrganizationDirectory;
  *
  * @author deves
  */
-public class Enterprise extends Organization{
+public abstract class Enterprise extends Organization{
     
     private EnterpriseType enterpriseType;
     private OrganizationDirectory organizationDirectory;
-
-    // Constructor
-    public Enterprise(String name, EnterpriseType type) {
-        super(name);  // Call Organization's constructor with only the name
-        this.enterpriseType = type;  // Set the enterprise type
-        this.organizationDirectory = new OrganizationDirectory();  // Initialize organization directory
-    }
-
+    
     // Getter for OrganizationDirectory
     public OrganizationDirectory getOrganizationDirectory() {
         return organizationDirectory;
@@ -65,4 +58,10 @@ public class Enterprise extends Organization{
         this.enterpriseType = enterpriseType;
     }
     
+    // Constructor
+    public Enterprise(String name, EnterpriseType type) {
+        super(name);  // Call Organization's constructor with only the name
+        this.enterpriseType = type;  // Set the enterprise type
+        this.organizationDirectory = new OrganizationDirectory();  // Initialize organization directory
+    }
 }
