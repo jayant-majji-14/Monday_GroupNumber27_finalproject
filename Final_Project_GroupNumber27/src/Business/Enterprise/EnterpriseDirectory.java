@@ -12,7 +12,12 @@ import java.util.ArrayList;
  */
 public class EnterpriseDirectory {
             private ArrayList<Business.Enterprise.Enterprise> enterpriseList;
+          
    
+            
+        public EnterpriseDirectory(){
+        enterpriseList=new ArrayList<Enterprise>();
+    }
 
     public ArrayList<Business.Enterprise.Enterprise> getEnterpriseList() {
         return enterpriseList;
@@ -22,9 +27,6 @@ public class EnterpriseDirectory {
         this.enterpriseList = enterpriseList;
     }
     
-    public EnterpriseDirectory(){
-        enterpriseList=new ArrayList<Business.Enterprise.Enterprise>();
-    }
     
     //Create enterprise
     public Business.Enterprise.Enterprise createAndAddEnterprise(String name,Business.Enterprise.Enterprise.EnterpriseType type){

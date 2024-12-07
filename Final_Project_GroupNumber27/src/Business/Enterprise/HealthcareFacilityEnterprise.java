@@ -10,9 +10,10 @@ import java.util.ArrayList;
  *
  * @author ayush
  */
-public class HealthcareFacilityEnterprise {
-         public HealthcareFacilityEnterprise(String name){
-        super(name,Business.Enterprise.EnterpriseType.HealthcareFacility);
+public class HealthcareFacilityEnterprise extends Enterprise {
+
+        public HealthcareFacilityEnterprise(String name){
+        super(name,Business.Enterprise.Enterprise.EnterpriseType.HealthcareFacility);
     }
     @Override
     public ArrayList<Role> getSupportedRole() {

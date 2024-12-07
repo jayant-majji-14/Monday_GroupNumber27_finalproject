@@ -23,8 +23,12 @@ public class Network {
     }
 
     public void setName(String name) {
-        this.name = name;
+    if (name == null || name.trim().isEmpty()) {
+        throw new IllegalArgumentException("Network name cannot be null or empty.");
     }
+    this.name = name;
+}
+
 
     public EnterpriseDirectory getEnterpriseDirectory() {
         return enterpriseDirectory;
