@@ -5,7 +5,6 @@
 package Business;
 
 import Business.Network.Network;
-import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
 import Business.UserAccount.UserAccount;
@@ -17,15 +16,15 @@ import java.util.ArrayList;
  */
 public class Ecosystem {
     
-    private static Ecosystem instance;
+    private static Ecosystem business;
     private ArrayList<Network> networkList;  // To manage networks
     private ArrayList<UserAccount> userList;        // To manage system users
 
     public static Ecosystem getInstance() {
-        if (instance == null) {
-            instance = new Ecosystem();
+        if (business == null) {
+            business = new Ecosystem();
         }
-        return instance;
+        return business;
     }
 
     private Ecosystem() {

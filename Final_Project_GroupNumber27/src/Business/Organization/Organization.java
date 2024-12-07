@@ -14,14 +14,14 @@ import java.util.ArrayList;
  *
  * @author deves
  */
-public class Organization {
+public abstract class Organization {
     
     private String name;
     private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
     private int organizationID;
-    private static int counter = 1;
+    private static int counter = 0;
     
     public enum Type {
         Patient("Patient Organization"),
@@ -45,10 +45,11 @@ public class Organization {
     // Constructor
     public Organization(String name) {
         this.name = name;
-        this.workQueue = new WorkQueue();
-        this.employeeDirectory = new EmployeeDirectory();
-        this.userAccountDirectory = new UserAccountDirectory();
-        this.organizationID = counter++;
+        workQueue = new WorkQueue();
+        employeeDirectory = new EmployeeDirectory();
+        userAccountDirectory = new UserAccountDirectory();
+        organizationID = counter;
+        ++counter;
     }
 
     public abstract ArrayList<Role> getSupportedRole();
@@ -61,9 +62,25 @@ public class Organization {
     public UserAccountDirectory getUserAccountDirectory() {
         return userAccountDirectory;
     }
+    
+    public static int getCounter() {
+        return counter;
+    }
+
+    public static void setCounter(int counter) {
+        Organization.counter = counter;
+    }
 
     public WorkQueue getWorkQueue() {
         return workQueue;
+    }
+    
+    public int getOrganizationID() {
+        return organizationID;
+    }
+    
+    public void setWorkQueue(WorkQueue workQueue) {
+        this.workQueue = workQueue;
     }
 
     // Getter and setter for organization name
