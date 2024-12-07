@@ -1,28 +1,50 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package Business.Enterprise;
 
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 
-/**
- * Abstract class representing an enterprise in the system.
- */
-public abstract class Enterprise extends Organization {
-    private EnterpriseType enterpriseType; // Type of the enterprise
-    private OrganizationDirectory organizationDirectory; // Directory to manage organizations within the enterprise
 
-    // Enum for enterprise types
+/**
+ *
+ * @author deves
+ */
+public class Enterprise extends Organization{
+    
+    private EnterpriseType enterpriseType;
+    private OrganizationDirectory organizationDirectory;
+
+    // Constructor
+    public Enterprise(String name, EnterpriseType type) {
+        super(name);  // Call Organization's constructor with only the name
+        this.enterpriseType = type;  // Set the enterprise type
+        this.organizationDirectory = new OrganizationDirectory();  // Initialize organization directory
+    }
+
+    // Getter for OrganizationDirectory
+    public OrganizationDirectory getOrganizationDirectory() {
+        return organizationDirectory;
+    }
+
+    // Enum for Enterprise Types specific to the project
     public enum EnterpriseType {
-        HealthcareFacility("Healthcare Facility"),
-        CentralLaboratory("Central Laboratory"),
-        ResearchDepartment("Research Department"),
-        LifeStyleCoachingUnit("Lifestyle Coaching Unit");
+        Hospital("Hospital"),
+        Screening("Screening"),
+        Pharmacy("Pharmacy"),
+        NGO("NGO"),
+        LifestyleProgram("Lifestyle Program");
 
         private String value;
 
+        // Constructor for EnterpriseType
         private EnterpriseType(String value) {
             this.value = value;
         }
 
+        // Getter for value
         public String getValue() {
             return value;
         }
@@ -33,35 +55,14 @@ public abstract class Enterprise extends Organization {
         }
     }
 
-    // Constructor
-    public Enterprise(String organizationId, String name, EnterpriseType type) {
-        super(organizationId, name, "Enterprise"); // Pass all required parameters to Organization constructor
-        this.enterpriseType = type;
-        this.organizationDirectory = new OrganizationDirectory();
-    }
-
-    // Getters and Setters
-    public OrganizationDirectory getOrganizationDirectory() {
-        return organizationDirectory;
-    }
-
+    // Getter for EnterpriseType
     public EnterpriseType getEnterpriseType() {
         return enterpriseType;
     }
 
+    // Setter for EnterpriseType
     public void setEnterpriseType(EnterpriseType enterpriseType) {
         this.enterpriseType = enterpriseType;
     }
-
-    // Abstract method for enterprise-specific functionality
-    public abstract void performEnterpriseFunction();
-
-    // ToString for better representation
-    @Override
-    public String toString() {
-        return "Enterprise{" +
-                "enterpriseType=" + enterpriseType +
-                ", name=" + getOrganizationName() +
-                '}';
-    }
+    
 }

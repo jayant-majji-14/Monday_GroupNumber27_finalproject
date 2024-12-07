@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBConnections {
     private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=HealthcareSystem";
-    private static final String USER = "Ayush";
+    private static final String USER = "DEVPC/deves";
     private static final String PASSWORD = "";
 
     public static Connection getConnection() {
