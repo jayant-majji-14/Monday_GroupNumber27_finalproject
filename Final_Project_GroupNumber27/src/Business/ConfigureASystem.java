@@ -36,7 +36,7 @@ public class ConfigureASystem {
         // Create initial organizations
         OrganizationDirectory organizationDirectory = new OrganizationDirectory();
         Organization patientOrganization = organizationDirectory.createOrganization(Organization.Type.Patient);
-        Organization screeningOrganization = network.getOrganizationDirectory().createOrganization("Screening Organization");
+        Organization ScreeningOrganization = network.getOrganizationDirectory().createOrganization("Screening Organization");
         Organization doctorOrganization = network.getOrganizationDirectory().createOrganization("Doctor Organization");
         Organization pharmacyOrganization = network.getOrganizationDirectory().createOrganization("Pharmacy Organization");
         Organization ngoOrganization = network.getOrganizationDirectory().createOrganization("NGO Organization");
