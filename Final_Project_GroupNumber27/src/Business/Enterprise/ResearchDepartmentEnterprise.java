@@ -1,23 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Business.Enterprise;
 
-import java.util.ArrayList;
-
 /**
- *
- * @author ayush
+ * Represents a Research Department Enterprise.
  */
-public class ResearchDepartmentEnterprise extends Enterprise{
-    
-    public ResearchDepartmentEnterprise(String name){
-        super(name,Business.Enterprise.Enterprise.EnterpriseType.ResearchDepartment);
+public class ResearchDepartmentEnterprise extends Enterprise {
+
+    // Constructor
+    public ResearchDepartmentEnterprise(String organizationId, String name) {
+        super(organizationId, name, EnterpriseType.ResearchDepartment);
     }
+
+    // Implementing the abstract method for enterprise-specific functionality
     @Override
-    public ArrayList<Role> getSupportedRole() {
-        return null;
+    public void performEnterpriseFunction() {
+        System.out.println("Research Department Enterprise " + getOrganizationName() + " is conducting research and development activities.");
     }
-    
+
+    // Implementing the abstract method from Organization
+    @Override
+    public void performOrganizationFunction() {
+        System.out.println("Performing organization-level operations for Research Department Enterprise.");
+    }
+
+    // Additional functionality specific to ResearchDepartmentEnterprise can be added here
 }
