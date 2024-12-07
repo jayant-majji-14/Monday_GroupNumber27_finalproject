@@ -4,6 +4,7 @@
  */
 package UI;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.Ecosystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
