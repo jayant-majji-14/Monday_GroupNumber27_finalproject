@@ -9,7 +9,7 @@ package Business.Enterprise;
  * @author ayush
  */
 public abstract class Enterprise {
-        private EnterpriseType enterpriseType;
+    private EnterpriseType enterpriseType;
     private OrganizationDirectory organizationDirectory;
 
     public OrganizationDirectory getOrganizationDirectory() {
@@ -22,6 +22,7 @@ public abstract class Enterprise {
         ResearchDepartment("Research Department"),
         LifeStyleCoachingUnit("Lifestyle Coaching unit");
        
+        
         private String value;
         
         private EnterpriseType(String value){
@@ -49,5 +50,4 @@ public abstract class Enterprise {
         this.enterpriseType=type;
         organizationDirectory=new OrganizationDirectory();
     }
-    
 }
