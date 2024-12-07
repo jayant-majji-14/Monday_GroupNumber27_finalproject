@@ -1,29 +1,39 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package Business.Organization;
 
+import Business.Employee.EmployeeDirectory;
 import Business.Role.Role;
+import Business.UserAccount.UserAccountDirectory;
+import Business.WorkQueue.WorkQueue;
 import java.util.ArrayList;
 
 /**
- * Base class for all organizations in the system.
+ *
+ * @author deves
  */
-public abstract class Organization {
-    private String organizationId;
-    private String organizationName;
-    private String organizationType;
-    private ArrayList<Role> roles; // Roles available in this organization
-
-    // Enum to define organization types
+public class Organization {
+    
+    private String name;
+    private WorkQueue workQueue;
+    private EmployeeDirectory employeeDirectory;
+    private UserAccountDirectory userAccountDirectory;
+    private int organizationID;
+    private static int counter = 1;
+    
     public enum Type {
-        Doctor("Doctor Organization"),
         Patient("Patient Organization"),
-        Screening("Screening Department"),
-        Exercise("Exercise Program Team"),
-        Pharmacy("Pharmacy Network Organization"),
-        NGO("NGO");
+        Screening("Screening Organization"),
+        Doctor("Doctor Organization"),
+        Pharmacy("Pharmacy Organization"),
+        NGO("NGO Organization"),
+        LifestyleProgram("Lifestyle Program Organization");
 
         private String value;
 
-        private Type(String value) {
+        Type(String value) {
             this.value = value;
         }
 
@@ -33,63 +43,41 @@ public abstract class Organization {
     }
 
     // Constructor
-    public Organization(String organizationId, String organizationName, String organizationType) {
-        this.organizationId = organizationId;
-        this.organizationName = organizationName;
-        this.organizationType = organizationType;
-        this.roles = new ArrayList<>();
+    public Organization(String name) {
+        this.name = name;
+        this.workQueue = new WorkQueue();
+        this.employeeDirectory = new EmployeeDirectory();
+        this.userAccountDirectory = new UserAccountDirectory();
+        this.organizationID = counter++;
     }
 
-    // Getters and Setters
-    public String getOrganizationId() {
-        return organizationId;
+    public abstract ArrayList<Role> getSupportedRole();
+    
+    // Getters for employee directory, user account directory, and work queue
+    public EmployeeDirectory getEmployeeDirectory() {
+        return employeeDirectory;
     }
 
-    public void setOrganizationId(String organizationId) {
-        this.organizationId = organizationId;
+    public UserAccountDirectory getUserAccountDirectory() {
+        return userAccountDirectory;
     }
 
-    public String getOrganizationName() {
-        return organizationName;
+    public WorkQueue getWorkQueue() {
+        return workQueue;
     }
 
-    public void setOrganizationName(String organizationName) {
-        this.organizationName = organizationName;
+    // Getter and setter for organization name
+    public String getName() {
+        return name;
     }
 
-    public String getOrganizationType() {
-        return organizationType;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setOrganizationType(String organizationType) {
-        this.organizationType = organizationType;
-    }
-
-    public ArrayList<Role> getRoles() {
-        return roles;
-    }
-
-    // Add a role to the organization
-    public void addRole(Role role) {
-        this.roles.add(role);
-    }
-
-    // Remove a role from the organization
-    public void removeRole(Role role) {
-        this.roles.remove(role);
-    }
-
-    // Abstract method for organization-specific functionality
-    public abstract void performOrganizationFunction();
-
-    // ToString for better representation
     @Override
     public String toString() {
-        return "Organization{" +
-                "organizationId='" + organizationId + '\'' +
-                ", organizationName='" + organizationName + '\'' +
-                ", organizationType='" + organizationType + '\'' +
-                ", roles=" + roles +
-                '}';
+        return name;
     }
+    
 }
