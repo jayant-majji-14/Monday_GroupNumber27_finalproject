@@ -104,7 +104,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Antibodies-count");
+        jLabel2.setText("Glucose Level");
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Images/upload-icon.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
