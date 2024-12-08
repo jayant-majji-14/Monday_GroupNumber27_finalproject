@@ -94,15 +94,15 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
 
         cholesterol.setBackground(new java.awt.Color(255, 255, 255));
         cholesterol.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        cholesterol.setText("Cholesterol");
+        cholesterol.setText("Plasma Glucose Test");
 
         diabetes.setBackground(new java.awt.Color(255, 255, 255));
         diabetes.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        diabetes.setText("Diabetes");
+        diabetes.setText("A1C Test");
 
         hepatitis.setBackground(new java.awt.Color(255, 255, 255));
         hepatitis.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        hepatitis.setText("Hepatitis B");
+        hepatitis.setText("Urine Test");
 
         resultStatus.setBackground(new java.awt.Color(88, 177, 159));
         resultStatus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -115,7 +115,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
 
         blood.setBackground(new java.awt.Color(255, 255, 255));
         blood.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        blood.setText("Blood Test");
+        blood.setText("Fasting Blood Glucose");
         blood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bloodActionPerformed(evt);
@@ -124,7 +124,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
 
         cancer.setBackground(new java.awt.Color(255, 255, 255));
         cancer.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        cancer.setText("Cancer");
+        cancer.setText("Oral Glucose Tolerance Test");
 
         adviceTest.setBackground(new java.awt.Color(88, 177, 159));
         adviceTest.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -234,7 +234,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(pulseTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                                                .addComponent(pulseTextField, javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(weightTextField, javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(tempTextField, javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(rrTextField, javax.swing.GroupLayout.Alignment.LEADING)
