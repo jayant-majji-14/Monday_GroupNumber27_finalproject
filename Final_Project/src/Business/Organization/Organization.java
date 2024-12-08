@@ -26,7 +26,7 @@ public abstract class Organization {
     
     public enum Type{
         Receptionist("Receptionist Organization"),Visitor("Visitor Organization"), Doctor("Doctor Organization"), Screening("Screening Organization"),
-        Radiology("Radiology Organization"),ResearchScientist("ResearchScientist Organization"),ResearchAssistant("ResearchAssistant Organization");
+        Radiology("Radiology Organization"),ResearchScientist("ResearchScientist Organization"),ResearchAssistant("ResearchAssistant Organization"),Pharmacist("Pharmacist Organization"),Nutritionist("Nutritionist Organization"),Coach("Coach Organization");
         private String value;
         private Type(String value) {
             this.value = value;
