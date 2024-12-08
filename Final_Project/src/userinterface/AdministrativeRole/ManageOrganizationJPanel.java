@@ -7,6 +7,7 @@ package userinterface.AdministrativeRole;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.HospitalEnterprise;
 import Business.Enterprise.LaboratoryEnterprise;
+import Business.Enterprise.LifestyleCoachingEnterprise;
 import Business.Enterprise.ResearchDepartmentEnterprise;
 import Business.Organization.Organization;
 import Business.Organization.Organization.Type;
@@ -226,6 +227,12 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
                 }
             }
+            if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.LifestyleCoaching.getValue())) {
+                if (type.getValue().equals(Organization.Type.Pharmacist.getValue())|| type.getValue().equals(Organization.Type.Nutritionist.getValue()) || type.getValue().equals(Organization.Type.Coach.getValue())) {
+                    organizationJComboBox.addItem(type);
+
+                }
+            }
         }
     }
 
@@ -242,6 +249,12 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             }
          }else if(enterprise instanceof ResearchDepartmentEnterprise){
              if (directory.getOrganizationList().size() >= 2) {
+                organizationJComboBox.removeAll();
+                organizationJComboBox.setEnabled(false);
+            }
+         }
+         else if(enterprise instanceof LifestyleCoachingEnterprise){
+             if (directory.getOrganizationList().size() >= 3) {
                 organizationJComboBox.removeAll();
                 organizationJComboBox.setEnabled(false);
             }
@@ -290,6 +303,15 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
        
        if(enterprise instanceof ResearchDepartmentEnterprise){
            if (directory.getOrganizationList().size() == 2) {
+                removeItems();
+            }
+            else{
+                addItemsInDirectory();
+           }
+       }
+       
+       if(enterprise instanceof LifestyleCoachingEnterprise){
+           if (directory.getOrganizationList().size() == 3) {
                 removeItems();
             }
             else{

@@ -23,7 +23,10 @@ public abstract class Role {
         ScreeningAssistant("Screening Assistant"),
         ResearchAssistant("Research Assistant"),
         ResearchScientist("Research Scientist"),
-        Visitor("Visitor");
+        Visitor("Visitor"),
+        Pharmacist("Pharmacist"),
+        Coach("Coach"),
+        Nutritionist("Nutritionist");
         
         
         

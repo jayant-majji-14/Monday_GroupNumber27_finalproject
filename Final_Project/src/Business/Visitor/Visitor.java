@@ -28,13 +28,13 @@ public class Visitor {
     private String date;
     private String network; 
     private ArrayList<VitalSigns> vitalSignsHistory;
-  private VitalSigns currVital; 
-  private ArrayList<Phase> phaseList;
-  private boolean volunteer;
-  private String selectedBy;
-  private String researchStatus;
-  private UserAccount assignedDoctor;
- private String status;
+    private VitalSigns currVital; 
+    private ArrayList<Phase> phaseList;
+    private boolean volunteer;
+    private String selectedBy;
+    private String researchStatus;
+    private UserAccount assignedDoctor;
+    private String status;
 
     public UserAccount getAssignedDoctor() {
         return assignedDoctor;
