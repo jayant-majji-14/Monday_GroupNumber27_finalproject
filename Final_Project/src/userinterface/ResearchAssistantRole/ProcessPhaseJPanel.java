@@ -137,7 +137,7 @@ public void removeAll(){
         jLabel14.setText("Pulse rate:");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setText("Volunteer Name");
+        jLabel4.setText("VIsitor Name");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("Age");
