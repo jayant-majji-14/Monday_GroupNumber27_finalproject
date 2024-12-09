@@ -27,7 +27,7 @@ import javax.swing.JPanel;
  * @author devesh
  */
 
-public class ManagePatientsJPanel extends javax.swing.JPanel {
+public class ManageVisitorsJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form NewJPanel
@@ -37,7 +37,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
     private UserAccount account;
     EcoSystem business;
     Visitor patient ;
-    public ManagePatientsJPanel(JPanel container, Enterprise enterprise,UserAccount account,Visitor patient, EcoSystem business) {
+    public ManageVisitorsJPanel(JPanel container, Enterprise enterprise,UserAccount account,Visitor patient, EcoSystem business) {
         initComponents();
         this.container = container;
         this.enterprise = enterprise;
@@ -99,6 +99,11 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         diabetes.setBackground(new java.awt.Color(255, 255, 255));
         diabetes.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         diabetes.setText("A1C Test");
+        diabetes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                diabetesActionPerformed(evt);
+            }
+        });
 
         hepatitis.setBackground(new java.awt.Color(255, 255, 255));
         hepatitis.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -346,21 +351,21 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         List<String> tests =  new ArrayList();
         if(blood.isSelected())
             
-        tests.add("Blood test");
+        tests.add("Fasting Blood Glucose");
         //else 
         //tests.add("No");
         if(diabetes.isSelected())
-            tests.add("Diabetes");
+            tests.add("A1C Test");
         //else
          //   tests.add("No");
         if(cholesterol.isSelected())
-            tests.add("Cholesterol test");
+            tests.add("Plasma Glucose Test");
         if(cancer.isSelected())
-            tests.add("Cancer Test");
+            tests.add("Oral Glucose Tolerance Test");
         //else
          //   tests.add("No");
         if(hepatitis.isSelected())
-            tests.add("hepatitis test");
+            tests.add("Urine Test");
        // else
          //   tests.add("No");
           Iterator i = tests.iterator();
@@ -419,8 +424,8 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         }
        if(o!=null){
            
-          if(o.getWorkQueue().searchRequest(name, "Blood Test")) {
-                  JOptionPane.showMessageDialog(null,"Blood test report has already been requested for this patient");
+          if(o.getWorkQueue().searchRequest(name, "Fasting Blood Glucose")) {
+                  JOptionPane.showMessageDialog(null,"Glucose test report has already been requested for this patient");
                   blood.setSelected(false);
             return;
           }
@@ -429,7 +434,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             request.setSender(account);
             request.setStatus("Sent");
             request.setPatientName(name);
-            request.setTestName("Blood Test");
+            request.setTestName("Glucose Test");
             o.getWorkQueue().getWorkRequestList().add(request);
             account.getWorkQueue().getWorkRequestList().add(request);
           
@@ -457,8 +462,8 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             }
         }
        if(o!=null){
-              if(o.getWorkQueue().searchRequest(name, "diabetes test")) {
-                  JOptionPane.showMessageDialog(null,"diabetes test report has already been requested for this patient");
+              if(o.getWorkQueue().searchRequest(name, "A1C Test")) {
+                  JOptionPane.showMessageDialog(null,"A1C Test report has already been requested for this patient");
                   diabetes.setSelected(false);
             return;
           }
@@ -468,7 +473,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             request.setSender(account);
             request.setStatus("Sent");
             request.setPatientName(name);
-            request.setTestName("diabetes test");
+            request.setTestName("A1C Test");
             o.getWorkQueue().getWorkRequestList().add(request);
             account.getWorkQueue().getWorkRequestList().add(request);
            
@@ -498,8 +503,8 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             }
         }
        if(o!=null){
-                if(o.getWorkQueue().searchRequest(name, "cholesterol test")) {
-                  JOptionPane.showMessageDialog(null,"cholesterol test report has already been requested for this patient");
+                if(o.getWorkQueue().searchRequest(name, "Plasma Glucose Test")) {
+                  JOptionPane.showMessageDialog(null,"Plasma Glucose Test report has already been requested for this patient");
                   cholesterol.setSelected(false);
             return;
           }
@@ -508,7 +513,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             request.setSender(account);
             request.setStatus("Sent");
             request.setPatientName(name);
-            request.setTestName("cholesterol test");
+            request.setTestName("Plasma Glucose Test");
             o.getWorkQueue().getWorkRequestList().add(request);
             account.getWorkQueue().getWorkRequestList().add(request);
            
@@ -535,8 +540,8 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             }
         }
        if(o!=null){
-                 if(o.getWorkQueue().searchRequest(name, "cancer test")) {
-                  JOptionPane.showMessageDialog(null,"cancer test report has already been requested for this patient");
+                 if(o.getWorkQueue().searchRequest(name, "Oral Glucose Tolerance Test")) {
+                  JOptionPane.showMessageDialog(null,"Oral Glucose Tolerance Test report has already been requested for this patient");
                   cancer.setSelected(false);
             return;
           }
@@ -546,7 +551,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             request.setSender(account);
             request.setStatus("Sent");
             request.setPatientName(name);
-            request.setTestName("cancer test");
+            request.setTestName("Oral Glucose Tolerance Test");
             o.getWorkQueue().getWorkRequestList().add(request);
             account.getWorkQueue().getWorkRequestList().add(request);
            
@@ -573,8 +578,8 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             }
         }
        if(o!=null){
-                 if(o.getWorkQueue().searchRequest(name, "hepatitis test")) {
-                  JOptionPane.showMessageDialog(null,"hepatitis test report has already been requested for this patient");
+                 if(o.getWorkQueue().searchRequest(name, "Urine Test")) {
+                  JOptionPane.showMessageDialog(null,"Urine Test report has already been requested for this patient");
                   hepatitis.setSelected(false);
             return;
           }
@@ -584,7 +589,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             request.setSender(account);
             request.setStatus("Sent");
             request.setPatientName(name);
-            request.setTestName("hepatitis test");
+            request.setTestName("Urine Test");
             o.getWorkQueue().getWorkRequestList().add(request);
             account.getWorkQueue().getWorkRequestList().add(request);
            
@@ -751,7 +756,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
          
          if(!patient.isPatientNormal(patient.getAge(),rr3,pr3,bp3, weight3,temp3))
          {
-         JOptionPane.showMessageDialog(null,"This patient is not normal! Hence he is not eligible to be a volunteer.");
+         JOptionPane.showMessageDialog(null,"This visitor is not normal! Hence he is not eligible.");
             boolean eligible=false;
                 patient.setVolunteer(eligible);
                 patient.setStatus("Completed");
@@ -803,6 +808,10 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
     private void PatientNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatientNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PatientNameActionPerformed
+
+    private void diabetesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diabetesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_diabetesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

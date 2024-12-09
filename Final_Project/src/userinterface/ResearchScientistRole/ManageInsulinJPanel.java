@@ -405,7 +405,7 @@ public class ManageInsulinJPanel extends javax.swing.JPanel {
         try{
      if(!researchDepartmentEnterprise.getVaccineName().equals("")||researchDepartmentEnterprise.getVaccineName()!=null){
          
-        JOptionPane.showMessageDialog(null, "Vaccine attributes have already been defined for this enterprise");
+        JOptionPane.showMessageDialog(null, "Insulin attributes have already been defined for this enterprise");
         return;
      }}
         catch(Exception e){ 
@@ -454,13 +454,13 @@ public class ManageInsulinJPanel extends javax.swing.JPanel {
            }
            catch(NumberFormatException e)
            {
-            JOptionPane.showMessageDialog(null , "Invalid volunteer number"); 
+            JOptionPane.showMessageDialog(null , "Invalid visitor number"); 
             volunteerNumTextField.setText("");
                return;
            } 
         
         if(volNum==0)    {
-               JOptionPane.showMessageDialog(null , "Invalid volunteer number. Required number of volunteers should be greater than zero."); 
+               JOptionPane.showMessageDialog(null , "Invalid visitor number. Required number of visitords should be greater than zero."); 
             volunteerNumTextField.setText("");
                return; 
         }     
@@ -483,7 +483,7 @@ public class ManageInsulinJPanel extends javax.swing.JPanel {
     */
     
      int dialogButton=0;
-        int dialogResult=JOptionPane.showConfirmDialog (null, "Vaccine attributes once saved cannot be changed."
+        int dialogResult=JOptionPane.showConfirmDialog (null, "Insulin attributes once saved cannot be changed."
                 + "Are you sure you want to save your decision","Warning",dialogButton);
 
     if (dialogResult == JOptionPane.YES_OPTION) { 
@@ -505,10 +505,10 @@ public class ManageInsulinJPanel extends javax.swing.JPanel {
         try{
      if(researchDepartmentEnterprise.getVaccineName().equals("")||researchDepartmentEnterprise.getVaccineName()==null){
          
-        JOptionPane.showMessageDialog(null, "Vaccine is not defined yet. Please define vaccine before defining doses");
+        JOptionPane.showMessageDialog(null, "Insulin is not defined yet. Please define insulin before defining doses");
         return;
      }}
-        catch(Exception e){ JOptionPane.showMessageDialog(null, "Vaccine is not defined yet. Please define vaccine before defining doses");
+        catch(Exception e){ JOptionPane.showMessageDialog(null, "Insulin is not defined yet. Please define insulin before defining doses");
         return;}
         
         

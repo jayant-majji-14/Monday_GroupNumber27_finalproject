@@ -248,7 +248,7 @@ public void populateTable(){
         ResearchAssistantWorkRequest request = (ResearchAssistantWorkRequest)workRequestJTable.getValueAt(selectedRow, 1);
         Visitor visitor = (Visitor)workRequestJTable.getValueAt(selectedRow, 0);
         if (visitor.getResearchStatus().equals("failed")){
-                  JOptionPane.showMessageDialog(null, "This patient has already developed side effects. So can't proceed with further doses.");
+                  JOptionPane.showMessageDialog(null, "This visitor has already developed side effects. So can't proceed with further doses.");
             return;
         }
         //request.setStatus("Processing");
@@ -284,7 +284,7 @@ public void populateTable(){
         Visitor visitor = (Visitor)workRequestJTable.getValueAt(selectedRow, 0);
         
           if (visitor.getResearchStatus().equals("failed")){
-            JOptionPane.showMessageDialog(null, "This patient has already developed side effects. So can't proceed further to check antibodies.");
+            JOptionPane.showMessageDialog(null, "This visitor has already developed side effects. So can't proceed further to check glucose.");
             return;
         }
     
@@ -292,7 +292,7 @@ public void populateTable(){
                Week week4 = phase.searchWeek("week4");
                try{
                if(!(week4.getWeekStatus().equals("success"))){
-                   JOptionPane.showMessageDialog(null, "This patient has not reached 4th week yet. So you can't check antibodies count.");
+                   JOptionPane.showMessageDialog(null, "This visitor has not reached 4th week yet. So you can't check glucose count.");
              return; 
                }}
                catch(Exception e){
@@ -316,8 +316,8 @@ public void populateTable(){
         }
        if(o!=null){
            
-          if(o.getWorkQueue().searchRequest(name, "Antibodies Test4")) {
-                  JOptionPane.showMessageDialog(null,"Antibodies test report has already been requested for this patient for phase4");
+          if(o.getWorkQueue().searchRequest(name, "Glucose Test4")) {
+                  JOptionPane.showMessageDialog(null,"Glucose test report has already been requested for this patient for phase4");
             return;
           }
            LabTestWorkRequest request = new LabTestWorkRequest();
@@ -325,7 +325,7 @@ public void populateTable(){
             request.setSender(userAccount);
             request.setStatus("Sent");
             request.setPatientName(name);
-            request.setTestName("Antibodies Test4");
+            request.setTestName("Glucose Test4");
             o.getWorkQueue().getWorkRequestList().add(request);
             userAccount.getWorkQueue().getWorkRequestList().add(request);
                    Week week1 = phase.searchWeek("week1");

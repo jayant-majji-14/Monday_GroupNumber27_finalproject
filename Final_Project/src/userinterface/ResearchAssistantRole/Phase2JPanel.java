@@ -251,7 +251,7 @@ public class Phase2JPanel extends javax.swing.JPanel {
         ResearchAssistantWorkRequest request = (ResearchAssistantWorkRequest)workRequestJTable.getValueAt(selectedRow, 1);
         Visitor visitor = (Visitor)workRequestJTable.getValueAt(selectedRow, 0);
         if (visitor.getResearchStatus().equals("failed")){
-                  JOptionPane.showMessageDialog(null, "This patient has already developed side effects. So can't proceed with further doses.");
+                  JOptionPane.showMessageDialog(null, "This visitor has already developed side effects. So can't proceed with further doses.");
             return;
         }
        // request.setStatus("Processing");
@@ -287,7 +287,7 @@ public class Phase2JPanel extends javax.swing.JPanel {
         Visitor visitor = (Visitor)workRequestJTable.getValueAt(selectedRow, 0);
         
           if (visitor.getResearchStatus().equals("failed")){
-            JOptionPane.showMessageDialog(null, "This patient has already developed side effects. So can't proceed further to check antibodies.");
+            JOptionPane.showMessageDialog(null, "This visitor has already developed side effects. So can't proceed further to check glucose.");
             return;
         }
     
@@ -295,7 +295,7 @@ public class Phase2JPanel extends javax.swing.JPanel {
                Week week4 = phase.searchWeek("week4");
                try{
                if(!(week4.getWeekStatus().equals("success"))){
-                   JOptionPane.showMessageDialog(null, "This patient has not reached 4th week yet. So you can't check antibodies count.");
+                   JOptionPane.showMessageDialog(null, "This visitor has not reached 4th week yet. So you can't check glucose count.");
              return; 
                }}
                catch(Exception e){
@@ -319,8 +319,8 @@ public class Phase2JPanel extends javax.swing.JPanel {
         }
        if(o!=null){
            
-          if(o.getWorkQueue().searchRequest(name, "Antibodies Test2")) {
-                  JOptionPane.showMessageDialog(null,"Antibodies test report has already been requested for this patient for phase2");
+          if(o.getWorkQueue().searchRequest(name, "Glucose Test2")) {
+                  JOptionPane.showMessageDialog(null,"Glucose test report has already been requested for this visitor for phase2");
             return;
           }
            LabTestWorkRequest request = new LabTestWorkRequest();
@@ -328,7 +328,7 @@ public class Phase2JPanel extends javax.swing.JPanel {
             request.setSender(userAccount);
             request.setStatus("Sent");
             request.setPatientName(name);
-            request.setTestName("Antibodies Test2");
+            request.setTestName("Glucose Test2");
             o.getWorkQueue().getWorkRequestList().add(request);
             userAccount.getWorkQueue().getWorkRequestList().add(request);
                    Week week1 = phase.searchWeek("week1");
