@@ -137,7 +137,7 @@ public void removeAll(){
         jLabel14.setText("Pulse rate:");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setText("Volunteer Name");
+        jLabel4.setText("VIsitor Name");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("Age");
@@ -289,7 +289,7 @@ public void removeAll(){
         Week week=(Week)weekName.getSelectedItem();
         
         if(week==null || week.equals("")){
-              JOptionPane.showMessageDialog(null, "This phase is completed for this volunteer");
+              JOptionPane.showMessageDialog(null, "This phase is completed for this visitor");
             return;
         }
      if(bpTextField.equals("") || rrTextField.equals("") || tempTextField.equals("") || weightTextField.equals("") || pulseTextField.equals("")){
@@ -468,7 +468,7 @@ public void removeAll(){
             }
         
         catch(Exception e){
-         JOptionPane.showMessageDialog(null, "This phase is completed for this volunteer");
+         JOptionPane.showMessageDialog(null, "This phase is completed for this visitor");
             return;
         }
     }//GEN-LAST:event_saveJButtonActionPerformed

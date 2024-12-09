@@ -25,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author devesh
  */
-public class ManageVolunteersJPanel extends javax.swing.JPanel {
+public class ManageVisitorsJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private Enterprise enterprise;
@@ -42,7 +42,7 @@ public class ManageVolunteersJPanel extends javax.swing.JPanel {
      * @param researchScientistOrganization
      */
  
-    public ManageVolunteersJPanel(JPanel userProcessContainer, Enterprise enterprise,UserAccount userAccount,Organization researchScientistOrganization, EcoSystem business,String minAge,String maxAge,String numOfVolunteers) 
+    public ManageVisitorsJPanel(JPanel userProcessContainer, Enterprise enterprise,UserAccount userAccount,Organization researchScientistOrganization, EcoSystem business,String minAge,String maxAge,String numOfVolunteers) 
     {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -176,7 +176,7 @@ public class ManageVolunteersJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "VolunteerName", "Age", "RespiratoryRate", "HeartRate", "BloodPressure", "Weight", "Temperature"
+                "Visitor Name", "Age", "RespiratoryRate", "HeartRate", "BloodPressure", "Weight", "Temperature"
             }
         ) {
             Class[] types = new Class [] {
@@ -233,7 +233,7 @@ public class ManageVolunteersJPanel extends javax.swing.JPanel {
 
         jButton2.setBackground(new java.awt.Color(88, 177, 159));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setText("Assign doses to volunteer");
+        jButton2.setText("Assign doses to Visitor");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -412,7 +412,7 @@ private void populateResearchAssistant(){
         Visitor visitor = (Visitor)VolunteerJTable.getValueAt(selectedRow, 0);
          ResearchDepartmentEnterprise researchDepartmentEnterprise= (ResearchDepartmentEnterprise)enterprise;
          if(researchDepartmentEnterprise.getVolunteerNumber()==0){
-           JOptionPane.showMessageDialog(null,"You have already selected required number of volunteers");
+           JOptionPane.showMessageDialog(null,"You have already selected required number of visitors");
            return;
          };
          
@@ -425,7 +425,7 @@ private void populateResearchAssistant(){
                   try{
                       if(researchAssistantWorkRequest.getVolunteerName().equals(visitor.getName())){
                         
-                       JOptionPane.showMessageDialog(null,"Request has already been sent for this volunteer");
+                       JOptionPane.showMessageDialog(null,"Request has already been sent for this visitor");
            return;   
                     }}
                   
@@ -513,7 +513,7 @@ week44.setWeekStatus("initialized");
         ResearchAssistantWorkRequest request = new ResearchAssistantWorkRequest();
         UserAccount researchAssistant1=(UserAccount)(researchAssistant.getSelectedItem());
         
-            request.setMessage("Research Assistant - please give assigned doses and monitor the volunteer!!");
+            request.setMessage("Research Assistant - please give assigned doses and monitor the visitor!!");
             request.setSender(account);
             request.setStatus("Sent");
             request.setReceiver(researchAssistant1);

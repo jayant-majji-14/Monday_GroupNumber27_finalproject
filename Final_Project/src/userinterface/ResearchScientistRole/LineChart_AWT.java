@@ -22,7 +22,7 @@ public class LineChart_AWT extends ApplicationFrame {
       this.visitor=visitor;
       JFreeChart lineChart = ChartFactory.createLineChart(
          chartTitle,
-         "Phases","Antibodies",
+         "Phases","Glucose",
          createDataset(),
          PlotOrientation.VERTICAL,
          true,true,false);

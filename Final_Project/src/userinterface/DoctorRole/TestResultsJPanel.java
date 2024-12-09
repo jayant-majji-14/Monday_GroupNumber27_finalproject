@@ -61,7 +61,7 @@ public class TestResultsJPanel extends javax.swing.JPanel {
         }
         catch(Exception e){
             
-                JOptionPane.showMessageDialog(null,"Tests are not yet requested for this patient!");
+                JOptionPane.showMessageDialog(null,"Tests are not yet requested for this visitor!");
         }
         
         workRequestJTable.getTableHeader().setFont(new Font("Times New Roman" , Font.ITALIC,23));
@@ -74,8 +74,8 @@ void populateDropdownTestName(){
        String patientName1=((LabTestWorkRequest) request).getPatientName();
             String testName1=((LabTestWorkRequest) request).getTestName();
             if(patientName1.equals(this.patientName)){
-                if(!(testName1.equals("Antibodies Test1")||testName1.equals("Antibodies Test2")||testName1.equals("Antibodies Test3")||
-                        testName1.equals("Antibodies Test4"))){
+                if(!(testName1.equals("Glucose Test1")||testName1.equals("Glucose Test2")||testName1.equals("Glucose Test3")||
+                        testName1.equals("Glucose Test4"))){
               TestName.addItem(testName1);
             }}
         }
@@ -488,7 +488,7 @@ void populateDropdownTestName(){
         rightPanel.remove(this);
         Component[] componentArray = rightPanel.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        ManagePatientsJPanel dwjp = (ManagePatientsJPanel) component;
+        ManageVisitorsJPanel dwjp = (ManageVisitorsJPanel) component;
        //dwjp.populateRequestTable();
         CardLayout layout = (CardLayout)rightPanel.getLayout();
         layout.previous(rightPanel);
@@ -535,14 +535,14 @@ private void sendEmail(String emailAdd, boolean eligible) {
             InternetAddress address;
             address = new InternetAddress(to);
             if(eligible){
-            message.setSubject("Accepted as Volunteer for Vaccine Assessment");  
+            message.setSubject("Accepted as Visitor");  
             
-            message.setText("Hello "+patient.getName()+", Based on the different tests, you are identified as eligible for Vaccine Assessment Testing"); 
+            message.setText("Hello "+patient.getName()+", Based on the different tests, you are identified as eligible for Assessment"); 
             }
             else if(!eligible){
-                 message.setSubject("Rejected as Volunteer for Vaccine Assessment");  
+                 message.setSubject("Rejected for Assessment");  
             
-            message.setText("Hello "+patient.getName()+", Based on the different tests, you are identified as not eligible for Vaccine Assessment Testing"); 
+            message.setText("Hello "+patient.getName()+", Based on the different tests, you are identified as not eligible for Assessment"); 
             }
             Transport transport = session.getTransport("smtp");
             transport.connect(host,user,pass);
@@ -584,14 +584,14 @@ private void sendEmail(String emailAdd, boolean eligible) {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         if(patient.getStatus().equals("Completed")){
-             JOptionPane.showMessageDialog(null,"Decision has already been made for this person");
+             JOptionPane.showMessageDialog(null,"Decision has already been made for this visitor");
                  return;
         }
          for (WorkRequest request : account.getWorkQueue().getWorkRequestList()){
             String patientName1=  ((LabTestWorkRequest) request).getPatientName();
             if(patientName.equals(patientName1) ){
              if(!request.getStatus().equals("Completed")){
-                 JOptionPane.showMessageDialog(null,"All the test results are not yet completed for this person! So decision can't be made");
+                 JOptionPane.showMessageDialog(null,"All the test results are not yet completed for this visitor! So decision can't be made");
                  return;
              }
          }
@@ -622,14 +622,14 @@ private void sendEmail(String emailAdd, boolean eligible) {
                 patient.setStatus("Completed");
                 
                 sendEmail(patient.getEmailAdd(),eligible);
-                JOptionPane.showMessageDialog(null,"Email sent to volunteer");
+                JOptionPane.showMessageDialog(null,"Email sent to visitor");
         CardLayout layout = (CardLayout)rightPanel.getLayout();
         rightPanel.remove(this);
       layout.previous(rightPanel);
         Component[] comps = this.rightPanel.getComponents();
         for(Component comp : comps){
-        if(comp instanceof ManagePatientsJPanel){
-            ManagePatientsJPanel managePatientsJPanel= (ManagePatientsJPanel) comp;
+        if(comp instanceof ManageVisitorsJPanel){
+            ManageVisitorsJPanel managePatientsJPanel= (ManageVisitorsJPanel) comp;
             managePatientsJPanel.disableAll(); 
             }
         }
