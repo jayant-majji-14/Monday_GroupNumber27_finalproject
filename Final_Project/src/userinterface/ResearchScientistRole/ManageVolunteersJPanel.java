@@ -176,7 +176,7 @@ public class ManageVolunteersJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "VolunteerName", "Age", "RespiratoryRate", "HeartRate", "BloodPressure", "Weight", "Temperature"
+                "Visitor Name", "Age", "RespiratoryRate", "HeartRate", "BloodPressure", "Weight", "Temperature"
             }
         ) {
             Class[] types = new Class [] {
@@ -233,7 +233,7 @@ public class ManageVolunteersJPanel extends javax.swing.JPanel {
 
         jButton2.setBackground(new java.awt.Color(88, 177, 159));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setText("Assign doses to volunteer");
+        jButton2.setText("Assign doses to Visitor");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

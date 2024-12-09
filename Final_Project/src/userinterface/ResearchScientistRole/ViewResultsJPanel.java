@@ -195,7 +195,7 @@ public void populateTable(){
 
             },
             new String [] {
-                "Volunteer Name", "Age", "Phase1", "Phase2", "Phase3", "Phase4", "Result"
+                "Visitor Name", "Age", "Phase1", "Phase2", "Phase3", "Phase4", "Result"
             }
         ) {
             Class[] types = new Class [] {
@@ -237,7 +237,7 @@ public void populateTable(){
 
             },
             new String [] {
-                "Volunteer Name", "Age", "Phase1", "Phase2", "Phase3", "Phase4", "Result"
+                "Visitor Name", "Age", "Phase1", "Phase2", "Phase3", "Phase4", "Result"
             }
         ) {
             Class[] types = new Class [] {

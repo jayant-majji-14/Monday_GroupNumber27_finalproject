@@ -78,7 +78,7 @@ public class ResearchScientistWorkAreaJPanel extends javax.swing.JPanel {
 
         jButton1.setBackground(new java.awt.Color(88, 177, 159));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setText("Manage Vaccine Attributes");
+        jButton1.setText("Manage Insulin Attributes");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -88,7 +88,7 @@ public class ResearchScientistWorkAreaJPanel extends javax.swing.JPanel {
 
         jButton2.setBackground(new java.awt.Color(88, 177, 159));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setText("Manage Volunteers");
+        jButton2.setText("Manage Visitors");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
