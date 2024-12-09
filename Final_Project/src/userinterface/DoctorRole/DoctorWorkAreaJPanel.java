@@ -168,7 +168,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
           
         try{
           if (patient.getStatus().equals("Completed")){
-             JOptionPane.showMessageDialog(null, "Examination for this patient is already completed");
+             JOptionPane.showMessageDialog(null, "Examination for this visitor is already completed");
             return;
         }}
         catch(Exception e){
@@ -194,7 +194,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         Visitor patient = (Visitor)PatientJTable.getValueAt(selectedRow, 0);
         try{
         if (patient.getStatus().equals("Completed")){
-             JOptionPane.showMessageDialog(null, "Examination for this patient is already completed");
+             JOptionPane.showMessageDialog(null, "Examination for this visitor is already completed");
             return;
         }}
         catch(Exception e){
@@ -211,11 +211,11 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         }
      
         if(!patient.getAssignedDoctor().getUsername().equals(account.getUsername())){
-            JOptionPane.showMessageDialog(null, "You are not the assigned user for this patient.");
+            JOptionPane.showMessageDialog(null, "You are not the assigned user for this visitor.");
             return;
         }
         patient.setStatus("Processing");
-        ManagePatientsJPanel managePatientsJPanel = new ManagePatientsJPanel(container,enterprise,account,patient, business);
+        ManageVisitorsJPanel managePatientsJPanel = new ManageVisitorsJPanel(container,enterprise,account,patient, business);
         container.add("managePatientsJPanel", managePatientsJPanel);
         CardLayout layout = (CardLayout) container.getLayout();
         layout.next(container);

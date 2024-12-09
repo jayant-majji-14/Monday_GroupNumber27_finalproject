@@ -108,8 +108,6 @@ public class Phase3JPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -137,7 +135,7 @@ public class Phase3JPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Patient Name", "Message", "Sender", "Receiver", "Status", "Phase1", "Phase2", "Phase3", "Week1", "Week2", "Week3", "Week4"
+                "Visitor Name", "Message", "Sender", "Receiver", "Status", "Phase1", "Phase2", "Phase3", "Week1", "Week2", "Week3", "Week4"
             }
         ) {
             Class[] types = new Class [] {
@@ -182,40 +180,19 @@ public class Phase3JPanel extends javax.swing.JPanel {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(55, 55, 55)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jButton2.setBackground(new java.awt.Color(88, 177, 159));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setText("Request Antibodies Count");
+        jButton2.setText("Request Glucose Level");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Images/Phase completion.jpeg"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -237,10 +214,8 @@ public class Phase3JPanel extends javax.swing.JPanel {
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(368, 368, 368)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(577, Short.MAX_VALUE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(662, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(50, 50, 50)
@@ -260,9 +235,7 @@ public class Phase3JPanel extends javax.swing.JPanel {
                     .addComponent(jButton2))
                 .addGap(40, 40, 40)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(809, Short.MAX_VALUE))
+                .addContainerGap(1085, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(100, 100, 100)
@@ -284,7 +257,7 @@ public class Phase3JPanel extends javax.swing.JPanel {
         Visitor visitor = (Visitor)workRequestJTable.getValueAt(selectedRow, 0);
         
         if (visitor.getResearchStatus().equals("failed")){
-                  JOptionPane.showMessageDialog(null, "This patient has already developed side effects. So can't proceed with further doses.");
+                  JOptionPane.showMessageDialog(null, "This visitor has already developed side effects. So can't proceed with further doses.");
             return;
         }
        // request.setStatus("Processing");
@@ -320,7 +293,7 @@ public class Phase3JPanel extends javax.swing.JPanel {
         Visitor visitor = (Visitor)workRequestJTable.getValueAt(selectedRow, 0);
         
           if (visitor.getResearchStatus().equals("failed")){
-            JOptionPane.showMessageDialog(null, "This patient has already developed side effects. So can't proceed further to check antibodies.");
+            JOptionPane.showMessageDialog(null, "This visitor has already developed side effects. So can't proceed further to check glucose.");
             return;
         }
     
@@ -328,7 +301,7 @@ public class Phase3JPanel extends javax.swing.JPanel {
                Week week4 = phase.searchWeek("week4");
                try{
                if(!(week4.getWeekStatus().equals("success"))){
-                   JOptionPane.showMessageDialog(null, "This patient has not reached 4th week yet. So you can't check antibodies count.");
+                   JOptionPane.showMessageDialog(null, "This visitor has not reached 4th week yet. So you can't check glucose count.");
              return; 
                }}
                catch(Exception e){
@@ -352,8 +325,8 @@ public class Phase3JPanel extends javax.swing.JPanel {
         }
        if(o!=null){
            
-          if(o.getWorkQueue().searchRequest(name, "Antibodies Test3")) {
-                  JOptionPane.showMessageDialog(null,"Antibodies test report has already been requested for this patient for phase3");
+          if(o.getWorkQueue().searchRequest(name, "Glucose Test3")) {
+                  JOptionPane.showMessageDialog(null,"Glucose test report has already been requested for this visitor for phase3");
             return;
           }
            LabTestWorkRequest request = new LabTestWorkRequest();
@@ -361,7 +334,7 @@ public class Phase3JPanel extends javax.swing.JPanel {
             request.setSender(userAccount);
             request.setStatus("Sent");
             request.setPatientName(name);
-            request.setTestName("Antibodies Test3");
+            request.setTestName("Glucose Test3");
             o.getWorkQueue().getWorkRequestList().add(request);
             userAccount.getWorkQueue().getWorkRequestList().add(request);
                Week week1 = phase.searchWeek("week1");
@@ -400,9 +373,7 @@ public class Phase3JPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton processJButton;
     private javax.swing.JButton refreshJButton;

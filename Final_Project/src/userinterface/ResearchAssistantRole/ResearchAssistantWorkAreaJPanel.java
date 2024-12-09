@@ -64,7 +64,7 @@ public class ResearchAssistantWorkAreaJPanel extends javax.swing.JPanel {
 
         jButton2.setBackground(new java.awt.Color(255, 255, 204));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton2.setText("Phase 2 Volunteers");
+        jButton2.setText("Phase 2 Visitors");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -74,7 +74,7 @@ public class ResearchAssistantWorkAreaJPanel extends javax.swing.JPanel {
 
         jButton3.setBackground(new java.awt.Color(255, 255, 204));
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton3.setText("Phase 3 Volunteers");
+        jButton3.setText("Phase 3 Visitors");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -84,7 +84,7 @@ public class ResearchAssistantWorkAreaJPanel extends javax.swing.JPanel {
 
         jButton4.setBackground(new java.awt.Color(255, 255, 204));
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton4.setText("Phase 4 Volunteers");
+        jButton4.setText("Phase 4 Visitors");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -94,7 +94,7 @@ public class ResearchAssistantWorkAreaJPanel extends javax.swing.JPanel {
 
         jButton1.setBackground(new java.awt.Color(255, 255, 204));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setText("Phase 1 Volunteers");
+        jButton1.setText("Phase 1 Visitors");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

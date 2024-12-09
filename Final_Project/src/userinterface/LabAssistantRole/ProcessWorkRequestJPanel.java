@@ -104,7 +104,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Antibodies-count");
+        jLabel2.setText("Glucose Level");
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Images/upload-icon.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -199,7 +199,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
           
           if(this.enterPriseType==researchType){
            if(antibodiesCount.getText().equals("")){
-                JOptionPane.showMessageDialog(null, "Please enter antibodies count");
+                JOptionPane.showMessageDialog(null, "Please enter glucose count");
             return;
            }
         
@@ -212,29 +212,29 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
            }
            catch(NumberFormatException e)
            {
-            JOptionPane.showMessageDialog(null , "Invalid antibodies count"); 
+            JOptionPane.showMessageDialog(null , "Invalid glucose count"); 
             antibodiesCount.setText("");
                return;
            } 
         request.setTestResult(resultJTextField.getText());
         request.setStatus("Completed");
         request.setFileupload(ImagePathTextField.getText());
-       if(this.testName.equals("Antibodies Test1")){
+       if(this.testName.equals("Glucose Test1")){
        Phase phase1= visitor.searchPhase("Phase1");
        phase1.setAntibodiesCount(antibodiesCount1);
        }
        
-       if(this.testName.equals("Antibodies Test2")){
+       if(this.testName.equals("Glucose Test2")){
        Phase phase2= visitor.searchPhase("Phase2");
        phase2.setAntibodiesCount(antibodiesCount1);
        }
        
-       if(this.testName.equals("Antibodies Test3")){
+       if(this.testName.equals("Glucose Test3")){
        Phase phase3= visitor.searchPhase("Phase3");
        phase3.setAntibodiesCount(antibodiesCount1);
        }
        
-       if(this.testName.equals("Antibodies Test4")){
+       if(this.testName.equals("Glucose Test4")){
        Phase phase4= visitor.searchPhase("Phase4");
        phase4.setAntibodiesCount(antibodiesCount1);
        }

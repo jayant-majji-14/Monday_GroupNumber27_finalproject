@@ -195,7 +195,7 @@ public void populateTable(){
 
             },
             new String [] {
-                "Volunteer Name", "Age", "Phase1", "Phase2", "Phase3", "Phase4", "Result"
+                "Visitor Name", "Age", "Phase1", "Phase2", "Phase3", "Phase4", "Result"
             }
         ) {
             Class[] types = new Class [] {
@@ -237,7 +237,7 @@ public void populateTable(){
 
             },
             new String [] {
-                "Volunteer Name", "Age", "Phase1", "Phase2", "Phase3", "Phase4", "Result"
+                "Visitor Name", "Age", "Phase1", "Phase2", "Phase3", "Phase4", "Result"
             }
         ) {
             Class[] types = new Class [] {
@@ -372,7 +372,7 @@ public void populateTable(){
 
         Visitor visitor = (Visitor)ResultsJTable.getValueAt(selectedRow, 0);
         if(findRequest1()==false &&findRequest2()==false && findRequest3()==false && findRequest4()==false){
-             JOptionPane.showMessageDialog(null, "All the requested antibodies reports have not been recieved yet.");
+             JOptionPane.showMessageDialog(null, "All the requested glucose reports have not been recieved yet.");
             return;
         }
         
@@ -385,8 +385,8 @@ public void populateTable(){
         layout.next(userProcessContainer);*/
 
         LineChart_AWT chart = new LineChart_AWT(visitor,
-         "Antibodies vs Phases" ,
-         "Antibodies development in different phases");
+         "Glucose vs Phases" ,
+         "Glucose development in different phases");
       chart.pack( );
       RefineryUtilities.centerFrameOnScreen( chart );
       chart.setVisible( true );
@@ -407,7 +407,7 @@ public void populateTable(){
                            LabTestWorkRequest labTestWorkRequest = (LabTestWorkRequest) request;
                            String testName1 = ((LabTestWorkRequest) request).getTestName();
                            if (visitor.getName().equals(labTestWorkRequest.getPatientName())) {
-                               if (testName1.equals("Antibodies Test1")) {
+                               if (testName1.equals("Glucose Test1")) {
                                  try{
                                      if(request.getStatus().equals("Completed"))
                                    return true;
@@ -437,7 +437,7 @@ public void populateTable(){
                            LabTestWorkRequest labTestWorkRequest = (LabTestWorkRequest) request;
                            String testName1 = ((LabTestWorkRequest) request).getTestName();
                            if (visitor.getName().equals(labTestWorkRequest.getPatientName())) {
-                               if (testName1.equals("Antibodies Test2")) {
+                               if (testName1.equals("Glucose Test2")) {
                                  try{
                                      if(request.getStatus().equals("Completed"))
                                    return true;
@@ -467,7 +467,7 @@ public void populateTable(){
                            LabTestWorkRequest labTestWorkRequest = (LabTestWorkRequest) request;
                            String testName1 = ((LabTestWorkRequest) request).getTestName();
                            if (visitor.getName().equals(labTestWorkRequest.getPatientName())) {
-                               if (testName1.equals("Antibodies Test3")) {
+                               if (testName1.equals("Glucose Test3")) {
                                  try{
                                      if(request.getStatus().equals("Completed"))
                                    return true;
@@ -497,7 +497,7 @@ public void populateTable(){
                            LabTestWorkRequest labTestWorkRequest = (LabTestWorkRequest) request;
                            String testName1 = ((LabTestWorkRequest) request).getTestName();
                            if (visitor.getName().equals(labTestWorkRequest.getPatientName())) {
-                               if (testName1.equals("Antibodies Test4")) {
+                               if (testName1.equals("Glucose Test4")) {
                                  try{
                                      if(request.getStatus().equals("Completed"))
                                    return true;
@@ -523,12 +523,12 @@ public void populateTable(){
         int failedCount=getFailedCount();
         if(successCount==0 && failedCount==0)
         {
-            JOptionPane.showMessageDialog(null, "No volunteers yet");
+            JOptionPane.showMessageDialog(null, "No visitors yet");
             return;
         }
         DefaultPieDataset pieDataSet = new DefaultPieDataset();
-        pieDataSet.setValue("Volunteers Success Count", successCount);
-        pieDataSet.setValue("Volunteers Failure Count", failedCount);
+        pieDataSet.setValue("Visitors Success Count", successCount);
+        pieDataSet.setValue("Visitors Failure Count", failedCount);
         JFreeChart chart = ChartFactory.createPieChart("Pie Chart", pieDataSet, true, true, true);
 
         ChartPanel cpp = new ChartPanel(chart);

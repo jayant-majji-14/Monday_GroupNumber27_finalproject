@@ -78,7 +78,7 @@ public class ResearchScientistWorkAreaJPanel extends javax.swing.JPanel {
 
         jButton1.setBackground(new java.awt.Color(88, 177, 159));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setText("Manage Vaccine Attributes");
+        jButton1.setText("Manage Insulin Attributes");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -88,7 +88,7 @@ public class ResearchScientistWorkAreaJPanel extends javax.swing.JPanel {
 
         jButton2.setBackground(new java.awt.Color(88, 177, 159));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setText("Manage Volunteers");
+        jButton2.setText("Manage Visitors");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -117,8 +117,8 @@ public class ResearchScientistWorkAreaJPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ManageVaccineJPanel manageVaccineJPanel = new ManageVaccineJPanel(userProcessContainer, enterprise,userAccount,researchScientistOrganization,  business);
-        userProcessContainer.add("ManageVaccineJPanel", manageVaccineJPanel);
+        ManageInsulinJPanel manageInsulinJPanel = new ManageInsulinJPanel(userProcessContainer, enterprise,userAccount,researchScientistOrganization,  business);
+        userProcessContainer.add("ManageInsulinJPanel", manageInsulinJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -129,13 +129,13 @@ public class ResearchScientistWorkAreaJPanel extends javax.swing.JPanel {
         try{
      if(researchDepartmentEnterprise.getVaccineName().equals("")||researchDepartmentEnterprise.getVaccineName()==null){
          
-        JOptionPane.showMessageDialog(null, "Vaccine is not defined yet. Please define vaccine and doses");
+        JOptionPane.showMessageDialog(null, "Insulin is not defined yet. Please define insulin and doses");
         return;
      }}
-        catch(Exception e){ JOptionPane.showMessageDialog(null, "Vaccine is not defined yet. Please define vaccine and doses");
+        catch(Exception e){ JOptionPane.showMessageDialog(null, "Insulin is not defined yet. Please define insulin and doses");
         return;}
-        ManageVolunteersJPanel manageVolunteersJPanel = new ManageVolunteersJPanel(userProcessContainer, enterprise,userAccount,researchScientistOrganization,  business,minAge,maxAge,numOfVolunteers);
-        userProcessContainer.add("manageVolunteersJPanel", manageVolunteersJPanel);
+        ManageVisitorsJPanel manageVisitorsJPanel = new ManageVisitorsJPanel(userProcessContainer, enterprise,userAccount,researchScientistOrganization,  business,minAge,maxAge,numOfVolunteers);
+        userProcessContainer.add("manageVisitorsJPanel", manageVisitorsJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -147,10 +147,10 @@ public class ResearchScientistWorkAreaJPanel extends javax.swing.JPanel {
         try{
         if(researchDepartmentEnterprise.getVaccineName().equals("")||researchDepartmentEnterprise.getVaccineName()==null){
          
-        JOptionPane.showMessageDialog(null, "Vaccine is not defined yet. Please define vaccine and doses");
+        JOptionPane.showMessageDialog(null, "Insulin is not defined yet. Please define insulin and doses");
         return;
      }}
-        catch(Exception e){ JOptionPane.showMessageDialog(null, "Vaccine is not defined yet. Please define vaccine and doses");
+        catch(Exception e){ JOptionPane.showMessageDialog(null, "Insulin is not defined yet. Please define insulin and doses");
         return;}
         ViewResultsJPanel ViewResultsJPanel = new ViewResultsJPanel(userProcessContainer,userAccount,enterprise, business);
         userProcessContainer.add("ViewResultsJPanel", ViewResultsJPanel);
