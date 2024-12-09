@@ -117,7 +117,7 @@ public class ResearchScientistWorkAreaJPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ManageVaccineJPanel manageVaccineJPanel = new ManageVaccineJPanel(userProcessContainer, enterprise,userAccount,researchScientistOrganization,  business);
+        ManageInsulinJPanel manageVaccineJPanel = new ManageInsulinJPanel(userProcessContainer, enterprise,userAccount,researchScientistOrganization,  business);
         userProcessContainer.add("ManageVaccineJPanel", manageVaccineJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

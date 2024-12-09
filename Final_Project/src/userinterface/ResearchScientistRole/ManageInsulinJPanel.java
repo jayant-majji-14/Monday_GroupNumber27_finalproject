@@ -18,7 +18,7 @@ import javax.swing.JPanel;
  *
  * @author devesh
  */
-public class ManageVaccineJPanel extends javax.swing.JPanel {
+public class ManageInsulinJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private Enterprise enterprise;
@@ -35,7 +35,7 @@ public class ManageVaccineJPanel extends javax.swing.JPanel {
      * @param researchScientistOrganization
      */
  
-    public ManageVaccineJPanel(JPanel userProcessContainer, Enterprise enterprise,UserAccount userAccount,Organization researchScientistOrganization, EcoSystem business) 
+    public ManageInsulinJPanel(JPanel userProcessContainer, Enterprise enterprise,UserAccount userAccount,Organization researchScientistOrganization, EcoSystem business) 
     {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -191,13 +191,13 @@ public class ManageVaccineJPanel extends javax.swing.JPanel {
         });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("Vaccine Name");
+        jLabel2.setText("Insulin Name");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Required Number of volunteers");
+        jLabel3.setText("Required Number of Visitors");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel15.setText("Vaccine Type ");
+        jLabel15.setText("Insulin Type ");
 
         volunteerNumTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,7 +236,7 @@ public class ManageVaccineJPanel extends javax.swing.JPanel {
         });
 
         vaccineType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        vaccineType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inactivated", "Attenuated" }));
+        vaccineType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inactivated", "Activated" }));
 
         jLabel18.setText("from");
 
@@ -336,7 +336,6 @@ public class ManageVaccineJPanel extends javax.swing.JPanel {
                 .addGap(100, 100, 100)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -363,8 +362,9 @@ public class ManageVaccineJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dosesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DoseBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dose1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(1066, Short.MAX_VALUE))
+                            .addComponent(dose1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(901, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -394,10 +394,6 @@ public class ManageVaccineJPanel extends javax.swing.JPanel {
     private void yesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_yesBtnActionPerformed
-
-    private void volunteerNumTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volunteerNumTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_volunteerNumTextFieldActionPerformed
 
     private void maxAgeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maxAgeTextFieldActionPerformed
         // TODO add your handling code here:
@@ -543,6 +539,10 @@ public class ManageVaccineJPanel extends javax.swing.JPanel {
     private void dose1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dose1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dose1ActionPerformed
+
+    private void volunteerNumTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volunteerNumTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_volunteerNumTextFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
