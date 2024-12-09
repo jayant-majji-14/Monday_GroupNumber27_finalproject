@@ -49,10 +49,6 @@ public class OrganizationDirectory {
             organization = new ResearchAssistantOrganization();
             organizationList.add(organization);
         }
-        else if (type.getValue().equals(Type.Pharmacist.getValue())){
-            organization = new PharmacistOrganization();
-            organizationList.add(organization);
-        }
         else if (type.getValue().equals(Type.Nutritionist.getValue())){
             organization = new NutritionistOrganization();
             organizationList.add(organization);

@@ -228,7 +228,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 }
             }
             if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.LifestyleCoaching.getValue())) {
-                if (type.getValue().equals(Organization.Type.Pharmacist.getValue())|| type.getValue().equals(Organization.Type.Nutritionist.getValue()) || type.getValue().equals(Organization.Type.Coach.getValue())) {
+                if (type.getValue().equals(Organization.Type.Nutritionist.getValue()) || type.getValue().equals(Organization.Type.Coach.getValue())) {
                     organizationJComboBox.addItem(type);
 
                 }
